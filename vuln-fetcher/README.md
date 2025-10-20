@@ -58,17 +58,42 @@ This tool allows you to:
 
 ## Installation
 
-### Step 1: Download the Code
+### Quick Install (Recommended)
 
-Navigate to where you want to install:
+**macOS/Linux:**
 ```bash
-cd ~/Desktop
-# If using git:
-git clone <repository-url>
-cd paramify-nessus-integration
+git clone https://github.com/paramify/demo.git
+cd demo/vuln-fetcher
+chmod +x install.sh
+./install.sh
 ```
 
-### Step 2: Create Virtual Environment
+The installation script will:
+1. Check for Python 3
+2. Create a virtual environment
+3. Install all dependencies
+4. Guide you through entering your API credentials
+5. Test your connections
+
+That's it! After installation completes, run:
+```bash
+./run.sh
+```
+
+---
+
+### Manual Installation
+
+If you prefer to set up manually or the automatic installer doesn't work:
+
+#### Step 1: Download the Code
+
+```bash
+git clone https://github.com/paramify/demo.git
+cd demo/vuln-fetcher
+```
+
+#### Step 2: Create Virtual Environment
 
 **macOS/Linux:**
 ```bash
@@ -88,22 +113,14 @@ python -m venv venv
 venv\Scripts\activate.bat
 ```
 
-You should see `(venv)` at the start of your prompt.
-
-### Step 3: Install Dependencies
+#### Step 3: Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Expected output:
-```
-Successfully installed requests-2.31.0 python-dotenv-1.0.0 urllib3-2.1.0
-```
+#### Step 4: Configure Credentials
 
-### Step 4: Configure Credentials
-
-Copy the example configuration:
 ```bash
 cp .env.example .env
 ```
@@ -128,23 +145,16 @@ GITHUB_TOKEN=your_github_token_here
 - Don't add spaces around `=`
 - Paste API keys exactly as provided
 
-### Step 5: Make Run Script Executable (macOS/Linux)
+#### Step 5: Make Scripts Executable (macOS/Linux)
 
 ```bash
-chmod +x run.sh
+chmod +x run.sh install.sh
 ```
 
-### Step 6: Verify Installation
+#### Step 6: Test Your Setup
 
-Test your connections:
-
-**Test Nessus:**
 ```bash
 ./run.sh list-scans
-```
-
-**Test Paramify:**
-```bash
 ./run.sh list-assessments
 ```
 
