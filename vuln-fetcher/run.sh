@@ -9,7 +9,7 @@ fi
 # If no arguments, show the unified menu
 # Otherwise pass all arguments to main.py
 if [ $# -eq 0 ]; then
-    python main.py
+    python3 main.py
 else
-    python main.py "$@"
+    python3 main.py "$@"
 fi
