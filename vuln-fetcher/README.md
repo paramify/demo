@@ -197,18 +197,24 @@ Only needed for private repositories.
 
 ### Daily Usage
 
-Activate your virtual environment (each time you use the tool):
+**macOS (Easiest):**
+Simply double-click the `run.command` file in Finder!
 
-**macOS/Linux:**
+The tool will automatically:
+- Check your setup
+- Activate the virtual environment
+- Launch the interactive menu
+- Keep the Terminal window open until you're done
+
+**macOS/Linux (Command Line):**
 ```bash
-cd paramify-nessus-integration
-source venv/bin/activate
+cd demo/vuln-fetcher
 ./run.sh
 ```
 
 **Windows:**
 ```bash
-cd paramify-nessus-integration
+cd demo\vuln-fetcher
 .\venv\Scripts\Activate.ps1
 python main.py
 ```

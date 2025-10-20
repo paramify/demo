@@ -180,12 +180,17 @@ else
     print_info "Skipping connection tests"
 fi
 
+# Make run scripts executable
+chmod +x run.sh 2>/dev/null
+chmod +x run.command 2>/dev/null
+
 # Success message
 print_header "INSTALLATION COMPLETE!"
 
-echo "Setup is complete! You can now run the tool using:"
+echo "Setup is complete! You can now run the tool:"
 echo ""
-echo -e "  ${GREEN}./run.sh${NC}"
+echo -e "  ${GREEN}Option 1: Double-click run.command (easiest!)${NC}"
+echo -e "  ${GREEN}Option 2: Run ./run.sh from Terminal${NC}"
 echo ""
 echo "Other useful commands:"
 echo "  ./run.sh import              - Import from Nessus"

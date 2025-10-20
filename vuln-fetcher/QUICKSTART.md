@@ -15,6 +15,10 @@ Follow the prompts to enter your API credentials.
 
 ## Usage
 
+**Option 1 (Easiest):**
+Double-click `run.command` in Finder!
+
+**Option 2 (Command Line):**
 ```bash
 ./run.sh
 ```
