@@ -464,7 +464,10 @@ def unified_menu():
                     paramify_base_url=Config.PARAMIFY_BASE_URL
                 )
                 list_scans(integration)
-                break
+                # Return to menu after listing
+                input("\nPress Enter to return to the main menu...")
+                unified_menu()
+                return
 
             elif choice == '4':
                 is_valid, missing = Config.validate()
@@ -480,7 +483,10 @@ def unified_menu():
                     paramify_base_url=Config.PARAMIFY_BASE_URL
                 )
                 list_assessments(integration)
-                break
+                # Return to menu after listing
+                input("\nPress Enter to return to the main menu...")
+                unified_menu()
+                return
 
             elif choice == '5':
                 print("\nGoodbye!")
