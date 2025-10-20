@@ -9,7 +9,7 @@ cd "$(dirname "$0")"
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
 GREEN='\033[0;32m'
-BLUE='\033[0;34m'
+BLUE='\033[1;36m'  # Bright cyan/blue
 NC='\033[0m' # No Color
 
 # Clear screen for clean presentation
