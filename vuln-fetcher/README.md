@@ -1,4 +1,4 @@
-# Nessus to Paramify Integration
+# Paramify Assessment Integration
 
 A Python CLI tool that imports Nessus vulnerability scan results into Paramify assessments from multiple sources: live Nessus instances or GitHub repositories.
 

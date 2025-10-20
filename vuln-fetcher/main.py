@@ -407,7 +407,7 @@ def import_from_github_interactive():
 def unified_menu():
     """Unified menu for all import options."""
     print("\n" + "=" * 70)
-    print("  NESSUS TO PARAMIFY INTEGRATION")
+    print("  PARAMIFY ASSESSMENTS INTEGRATION")
     print("=" * 70 + "\n")
 
     print("What would you like to do?\n")
