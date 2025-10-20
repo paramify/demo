@@ -41,3 +41,6 @@ ENV/
 *.tmp
 temp/
 .nessus
+
+# Tutorial/Documentation drafts
+TUTORIAL_SCRIPT.md
