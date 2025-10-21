@@ -90,11 +90,11 @@ if ! python3 -c "import requests, dotenv, urllib3" 2>/dev/null; then
     exit 1
 fi
 
-# Check if .env has required values
-if ! grep -q "PARAMIFY_API_KEY=." .env 2>/dev/null || ! grep -q "NESSUS_ACCESS_KEY=." .env 2>/dev/null; then
+# Check if .env has required values (only Paramify API key is required)
+if ! grep -q "PARAMIFY_API_KEY=." .env 2>/dev/null; then
     echo -e "${YELLOW}⚠ Configuration incomplete${NC}"
     echo ""
-    echo "Your .env file is missing required credentials."
+    echo "Your .env file is missing the required Paramify API key."
     echo ""
     read -p "Run installer to configure? (Y/n): " CONFIG
 
