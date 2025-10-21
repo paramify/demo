@@ -134,7 +134,7 @@ Edit `.env` with your credentials:
 ```bash
 # Paramify Configuration
 PARAMIFY_API_KEY=your_paramify_api_key_here
-PARAMIFY_BASE_URL=https://stage.paramify.com/api/v0
+PARAMIFY_BASE_URL=https://demo.paramify.com/api/v0
 
 # Nessus Configuration
 NESSUS_URL=https://localhost:8834

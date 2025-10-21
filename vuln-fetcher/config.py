@@ -14,7 +14,7 @@ class Config:
 
     # Paramify settings
     PARAMIFY_API_KEY: str = os.getenv('PARAMIFY_API_KEY', '')
-    PARAMIFY_BASE_URL: str = os.getenv('PARAMIFY_BASE_URL', 'https://stage.paramify.com/api/v0')
+    PARAMIFY_BASE_URL: str = os.getenv('PARAMIFY_BASE_URL', 'https://demo.paramify.com/api/v0')
 
     # Nessus settings
     NESSUS_URL: str = os.getenv('NESSUS_URL', 'https://localhost:8834')

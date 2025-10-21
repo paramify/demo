@@ -126,8 +126,8 @@ if [ "$SKIP_CONFIG" != "true" ]; then
     # Paramify credentials
     echo -e "${BLUE}--- Paramify Configuration ---${NC}"
     read -p "Paramify API Key: " PARAMIFY_KEY
-    read -p "Paramify Base URL [https://stage.paramify.com/api/v0]: " PARAMIFY_URL
-    PARAMIFY_URL=${PARAMIFY_URL:-https://stage.paramify.com/api/v0}
+    read -p "Paramify Base URL [https://demo.paramify.com/api/v0]: " PARAMIFY_URL
+    PARAMIFY_URL=${PARAMIFY_URL:-https://demo.paramify.com/api/v0}
 
     echo ""
     echo -e "${BLUE}--- Nessus Configuration ---${NC}"
