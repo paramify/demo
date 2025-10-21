@@ -116,3 +116,7 @@ python3 main.py
 echo ""
 echo -e "${BLUE}======================================================================${NC}"
 read -p "Press Enter to close this window..."
+
+# Close the Terminal window (macOS specific)
+osascript -e 'tell application "Terminal" to close (every window whose name contains "run.command")' > /dev/null 2>&1 &
+exit 0

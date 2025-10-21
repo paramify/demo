@@ -214,3 +214,7 @@ print_success "Happy scanning!"
 echo ""
 echo -e "${BLUE}======================================================================${NC}"
 read -p "Press Enter to close this window..."
+
+# Close the Terminal window (macOS specific)
+osascript -e 'tell application "Terminal" to close (every window whose name contains "install.command")' > /dev/null 2>&1 &
+exit 0
