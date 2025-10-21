@@ -31,6 +31,8 @@ Double-click `run.command` in Finder!
 
 That's it! The interactive menu will guide you through importing scans.
 
+**Tip**: When you list scans or assessments (options 3-4), you'll return to the main menu afterward.
+
 ## Need Help?
 
 - **Full documentation**: See [README.md](README.md)

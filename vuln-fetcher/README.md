@@ -229,7 +229,7 @@ python main.py
 You'll see:
 ```
 ======================================================================
-  NESSUS TO PARAMIFY INTEGRATION
+  PARAMIFY ASSESSMENTS INTEGRATION
 ======================================================================
 
 What would you like to do?
@@ -244,6 +244,8 @@ Enter your choice (1-5):
 ```
 
 Just pick a number and follow the prompts!
+
+**Note**: Options 3 and 4 will show you the available resources and then return you to the main menu.
 
 ### When You're Done
 
@@ -355,19 +357,23 @@ Same as above, but provide your GitHub token when prompted.
 ## Project Structure
 
 ```
-paramify-nessus-integration/
+demo/vuln-fetcher/
 ├── main.py                 # CLI entry point
 ├── integration.py          # Workflow orchestration
 ├── nessus_client.py        # Nessus API client
 ├── paramify_client.py      # Paramify API client
 ├── github_client.py        # GitHub API client
 ├── config.py               # Configuration management
-├── run.sh                  # Wrapper script (macOS/Linux)
+├── run.command             # Double-click launcher (macOS)
+├── run.sh                  # Command-line wrapper
+├── install.command         # Double-click installer (macOS)
+├── install.sh              # Command-line installer
 ├── requirements.txt        # Python dependencies
 ├── .env                    # Your credentials (not in git)
 ├── .env.example            # Template for credentials
-├── README.md               # This file
-└── CLAUDE.md               # Developer/architecture documentation
+├── README.md               # This file (user guide)
+├── QUICKSTART.md           # Quick reference guide
+└── CLAUDE.md               # Developer documentation
 ```
 
 ## How It Works
