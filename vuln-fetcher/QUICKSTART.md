@@ -4,6 +4,12 @@ Get up and running in 2 minutes!
 
 ## Installation
 
+**Option 1 (macOS - Easiest):**
+1. Clone/download the repo
+2. Open `demo/vuln-fetcher` in Finder
+3. Double-click `install.command`
+
+**Option 2 (Command Line):**
 ```bash
 git clone https://github.com/paramify/demo.git
 cd demo/vuln-fetcher

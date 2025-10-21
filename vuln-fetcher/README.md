@@ -60,7 +60,13 @@ This tool allows you to:
 
 ### Quick Install (Recommended)
 
-**macOS/Linux:**
+**macOS (Super Easy):**
+1. Download/clone the repository
+2. Navigate to `demo/vuln-fetcher` in Finder
+3. Double-click `install.command`
+4. Follow the prompts
+
+**macOS/Linux (Command Line):**
 ```bash
 git clone https://github.com/paramify/demo.git
 cd demo/vuln-fetcher
@@ -75,10 +81,9 @@ The installation script will:
 4. Guide you through entering your API credentials
 5. Test your connections
 
-That's it! After installation completes, run:
-```bash
-./run.sh
-```
+That's it! After installation completes:
+- **macOS**: Double-click `run.command`
+- **Command Line**: Run `./run.sh`
 
 ---
 
