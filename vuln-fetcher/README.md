@@ -45,16 +45,21 @@ This tool allows you to:
   ```
 
 ### Required Services
-- **Nessus** (Essentials or Professional)
-  - Running instance with web access
-  - API access enabled
 - **Paramify** account
   - API access with upload permissions
 
+### Optional Services (depending on your use case)
+- **Nessus** (Essentials or Professional) - Only needed for importing from Nessus
+  - Running instance with web access
+  - API access enabled
+- **GitHub** - Only needed for importing from private repositories
+
 ### Required Credentials
-- Nessus API keys (access key + secret key)
-- Paramify API key
-- GitHub token (optional, for private repos only)
+- **Paramify API key** (required for all operations)
+
+### Optional Credentials (depending on features you use)
+- **Nessus API keys** (access key + secret key) - Only for Nessus import
+- **GitHub token** - Only for private repository access
 
 ## Installation
 

@@ -423,12 +423,18 @@ def unified_menu():
             choice = input("Enter your choice (1-5): ").strip()
 
             if choice == '1':
-                # Validate Nessus configuration
+                # Validate Paramify and Nessus configuration
                 is_valid, missing = Config.validate()
                 if not is_valid:
-                    print(f"\n✗ Configuration error: Missing required environment variables: {', '.join(missing)}")
-                    print("\nPlease set the following in your .env file or environment:")
-                    for key in missing:
+                    print(f"\n✗ Configuration error: Missing required Paramify credentials: {', '.join(missing)}")
+                    print("\nPlease set PARAMIFY_API_KEY in your .env file")
+                    sys.exit(1)
+
+                is_valid_nessus, missing_nessus = Config.validate_nessus()
+                if not is_valid_nessus:
+                    print(f"\n✗ Configuration error: Missing Nessus credentials: {', '.join(missing_nessus)}")
+                    print("\nPlease set the following in your .env file:")
+                    for key in missing_nessus:
                         print(f"  - {key}")
                     sys.exit(1)
 
@@ -451,9 +457,12 @@ def unified_menu():
                 break
 
             elif choice == '3':
-                is_valid, missing = Config.validate()
-                if not is_valid:
-                    print(f"\n✗ Configuration error: Missing Nessus credentials")
+                is_valid_nessus, missing_nessus = Config.validate_nessus()
+                if not is_valid_nessus:
+                    print(f"\n✗ Configuration error: Missing Nessus credentials: {', '.join(missing_nessus)}")
+                    print("\nPlease set the following in your .env file:")
+                    for key in missing_nessus:
+                        print(f"  - {key}")
                     sys.exit(1)
 
                 integration = NessusParamifyIntegration(
@@ -472,7 +481,8 @@ def unified_menu():
             elif choice == '4':
                 is_valid, missing = Config.validate()
                 if not is_valid:
-                    print(f"\n✗ Configuration error: Missing Paramify credentials")
+                    print(f"\n✗ Configuration error: Missing Paramify credentials: {', '.join(missing)}")
+                    print("\nPlease set PARAMIFY_API_KEY in your .env file")
                     sys.exit(1)
 
                 integration = NessusParamifyIntegration(
@@ -597,14 +607,22 @@ Examples:
             sys.exit(1)
         import_from_github_interactive()
     else:
-        # Validate configuration for non-GitHub commands
+        # Validate Paramify configuration (required for all commands)
         is_valid, missing = Config.validate()
         if not is_valid:
-            print(f"✗ Configuration error: Missing required environment variables: {', '.join(missing)}")
-            print("\nPlease set the following in your .env file or environment:")
-            for key in missing:
-                print(f"  - {key}")
+            print(f"✗ Configuration error: Missing required Paramify credentials: {', '.join(missing)}")
+            print("\nPlease set PARAMIFY_API_KEY in your .env file")
             sys.exit(1)
+
+        # Validate Nessus configuration for Nessus-specific commands
+        if args.command in ['list-scans', 'import']:
+            is_valid_nessus, missing_nessus = Config.validate_nessus()
+            if not is_valid_nessus:
+                print(f"✗ Configuration error: Missing Nessus credentials: {', '.join(missing_nessus)}")
+                print("\nPlease set the following in your .env file:")
+                for key in missing_nessus:
+                    print(f"  - {key}")
+                sys.exit(1)
 
         # Initialize integration
         integration = NessusParamifyIntegration(

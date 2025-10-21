@@ -119,26 +119,30 @@ if [ "$SKIP_CONFIG" != "true" ]; then
     cp .env.example .env
 
     echo ""
-    echo "Please enter your API credentials."
+    echo "Please enter your API credentials.
+
+Note: Only Paramify API Key is required.
+Nessus credentials are optional (only needed for Nessus import).
+GitHub token is optional (only needed for private repos)."
     echo "Press Enter to skip optional fields."
     echo ""
 
     # Paramify credentials
-    echo -e "${BLUE}--- Paramify Configuration ---${NC}"
+    echo -e "${BLUE}--- Paramify Configuration (REQUIRED) ---${NC}"
     read -p "Paramify API Key: " PARAMIFY_KEY
     read -p "Paramify Base URL [https://demo.paramify.com/api/v0]: " PARAMIFY_URL
     PARAMIFY_URL=${PARAMIFY_URL:-https://demo.paramify.com/api/v0}
 
     echo ""
-    echo -e "${BLUE}--- Nessus Configuration ---${NC}"
+    echo -e "${BLUE}--- Nessus Configuration (Optional - for Nessus import) ---${NC}"
     read -p "Nessus URL [https://localhost:8834]: " NESSUS_URL
     NESSUS_URL=${NESSUS_URL:-https://localhost:8834}
-    read -p "Nessus Access Key: " NESSUS_ACCESS
-    read -p "Nessus Secret Key: " NESSUS_SECRET
+    read -p "Nessus Access Key (press Enter to skip): " NESSUS_ACCESS
+    read -p "Nessus Secret Key (press Enter to skip): " NESSUS_SECRET
 
     echo ""
-    echo -e "${BLUE}--- GitHub Configuration (Optional) ---${NC}"
-    read -p "GitHub Token (for private repos, press Enter to skip): " GITHUB_TOKEN
+    echo -e "${BLUE}--- GitHub Configuration (Optional - for private repos) ---${NC}"
+    read -p "GitHub Token (press Enter to skip): " GITHUB_TOKEN
 
     # Write to .env file
     cat > .env << EOF

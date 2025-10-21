@@ -29,6 +29,9 @@ class Config:
         """
         Validate that all required configuration is present.
 
+        Only PARAMIFY_API_KEY is required. Other credentials are optional
+        and only needed for specific features (Nessus import, private GitHub repos).
+
         Returns:
             Tuple of (is_valid, list of missing keys)
         """
@@ -36,6 +39,19 @@ class Config:
 
         if not cls.PARAMIFY_API_KEY:
             missing.append('PARAMIFY_API_KEY')
+
+        return len(missing) == 0, missing
+
+    @classmethod
+    def validate_nessus(cls) -> tuple[bool, list[str]]:
+        """
+        Validate that Nessus credentials are present.
+
+        Returns:
+            Tuple of (is_valid, list of missing keys)
+        """
+        missing = []
+
         if not cls.NESSUS_ACCESS_KEY:
             missing.append('NESSUS_ACCESS_KEY')
         if not cls.NESSUS_SECRET_KEY:
